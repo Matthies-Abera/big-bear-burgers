@@ -1,0 +1,106 @@
+.closeIcon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 2;
+}
+
+.navDesktop {
+    align-items: center;
+    display: none;
+    height: 14.375rem;
+    justify-content: space-between;
+    max-width: 73.75rem;
+    width: calc(100vw - 3rem);
+}
+
+.navDesktop a {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.navDesktop img {
+    height: 6.25rem;
+    width: 14rem;
+}
+
+.navDesktop ul {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    justify-items: flex-end;
+}
+
+.navHamburger {
+    background-color: var(--hero);
+    display: grid;
+    height: calc(100vh - 4.5rem);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity 1s;
+    width: 100%;
+    z-index: 1;
+}
+
+.navHamburger div {
+    display: grid;
+    gap: 1.25rem;
+    justify-items: center;
+}
+
+.navHamburger ul {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4.25rem;
+    justify-items: center;
+}
+
+.navHamburgerOpen {
+    opacity: 1;
+}
+
+.navHamburgerPageOptions a {
+    font-size: 1rem;
+}
+
+.navMobile {
+    background-color: var(--subtext);
+    bottom: 0;
+    height: 4.5rem;
+    position: absolute;
+    width: calc(100%);
+}
+
+.navbarMobile {
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.navbarMobile a, .hamburgerMenu {
+    align-content: space-evenly;
+    align-items: center;
+    color: var(--neutral);
+    display: grid;
+    font-size: 0.75rem;
+    justify-items: center;
+    width: 5rem;
+}
+
+.navbarMobileActive {
+    background-color: var(--active);
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+    .navDesktop {
+        display: flex;
+    }
+    
+    .navHamburger, .navMobile {
+        display: none;
+    }
+}

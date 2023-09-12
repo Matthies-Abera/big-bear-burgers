@@ -1,0 +1,62 @@
+
+:root {
+    --accent: #891B6B;
+    --active: #2F3734;
+    --buttons: #F22B32;
+    --hero: #F4E7CD;
+    --neutral: #FFFDF5;
+    --subtext: #1A211E;
+    --titles: #000000;
+}
+
+a {
+    color: var(--subtext);
+    font-size: 0.75rem;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--neutral);
+    display: flex;
+    justify-items: center;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* MOBILE - MEDIUM */
+@media (min-width: 375px) {
+    
+}
+
+/* MOBILE - LARGE */
+@media (min-width: 425px) {
+    
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.5rem;
+    }
+}
+
+/* LAPTOP */
+@media (min-width: 1024px) {
+    
+}
+
+/* LAPTOP - LARGE */
+@media (min-width: 1440px) {
+    
+}
+
+/* 4K */
+@media (min-width: 2560px) {
+    
+}
