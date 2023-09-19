@@ -1,10 +1,3 @@
-/* TODO: CREATE HOVER ANIMATION AND ACTIVE STATE FOR DESKTOP NAV */
-/* TODO: CREATE ACTIVE STATE FOR MOBILE NAV */
-
-/* TODO: ON HOME CLICK -> CLOSE THE HAMBURGER NAV */
-/* TODO: CREATE NEW ROUTE FOR ALL ADDITIONAL PAGES IN HAMBURGER NAV */
-
-/* TODO: DOWNLOAD REQUIRED FONTS (LOW PRIORITY) */
 /* TODO: EDIT CLOSE ICON TO LOOK LIKE WEBSITE (LOW PRIORITY) */
 
 "use client";
@@ -12,8 +5,9 @@ import Link from 'next/link';
 import styles from '../styles/Navbar.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
+import { desktopPages, mobilePages } from '@/utils/BusinessInformation';
 
-export default function Navbar() {
+export default function Navbar(props: { currentPage?: string; }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,29 +15,31 @@ export default function Navbar() {
       <div className={styles.navDesktop}>
         <Image src={require("../assets/icons/shiso-logo-default.svg")} alt="brand default logo"/>
         <ul>
-          <Link href="/menu">MENU</Link>
-          <Link href="/location">LOCATIONS</Link>
-          <Link href="/about">ABOUT</Link>
-          <Link href="/order">ORDER</Link>
-          <Link href="/merch">MERCH</Link>
-          <Link href="/jobs">JOBS</Link>
+          {desktopPages.map(page =>
+            page.name == props.currentPage
+            ? <Link href={page.href} key={page.name} className={styles.navDesktopActive}>{page.name.toUpperCase()}</Link>
+            : <Link href={page.href} key={page.name}>{page.name.toUpperCase()}</Link>
+          )}
         </ul>
+      </div>
+
+      <div className={styles.navMobileHeader}>
+        <Image src={require("../assets/icons/shiso-logo-default.svg")} alt="brand default logo"/>
       </div>
 
       <div className={styles.navMobile}>
         <ul className={styles.navbarMobile}>
-          <Link href="/menu" className={styles.navbarMobileActive}>
-            <Image src={require("../assets/icons/icon-burger.svg")} alt="menu icon"/>
-            Menu
-          </Link>
-          <Link href="/location">
-            <Image src={require("../assets/icons/icon-location.svg")} alt="location icon"/>
-            Locations
-          </Link>
-          <Link href="/order">
-            <Image src={require("../assets/icons/icon-order.svg")} alt="menu icon"/>
-            Order
-          </Link>
+          {mobilePages.map(page =>
+            page.link.name == props.currentPage
+            ? <Link href={page.link.href} key={page.link.name} className={styles.navbarMobileActive}>
+                <Image src={page.icon} alt={page.alt}/>
+                {page.link.name}
+              </Link>
+            : <Link href={page.link.href} key={page.link.name}>
+                <Image src={page.icon} alt={page.alt}/>
+                {page.link.name}
+              </Link>
+          )}
           <div onClick={() => setIsOpen(true)} className={styles.hamburgerMenu}>
             <Image src={require("../assets/icons/more-icon.svg")} alt="menu icon"/>
             More
@@ -54,7 +50,7 @@ export default function Navbar() {
       <div className={[styles.navHamburger, isOpen && styles.navHamburgerOpen].join(' ')}>
         <ul>
           <div className={styles.navHamburgerPageOptions}>
-            <Link href="/">HOME</Link>
+            <Link href="/" onClick={() => setIsOpen(false)}>HOME</Link>
             <Link href="/location">ABOUT</Link>
             <Link href="/merch">MERCH</Link>
             <Link href="/jobs">JOBS</Link>

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Montserrat:wght@200&display=swap');
 
 :root {
     --accent: #891B6B;
+    --offset-yellow: #f4e7cd;
     --active: #2F3734;
     --buttons: #F22B32;
     --hero: #F4E7CD;
@@ -11,6 +13,7 @@
 
 a {
     color: var(--subtext);
+    font-family: 'Roboto';
     font-size: 0.75rem;
     text-decoration: none;
 }
