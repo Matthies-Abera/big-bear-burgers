@@ -12,13 +12,18 @@ export default function Navbar(props: { currentPage?: string; }) {
 
   return (
     <>
-      <div className={styles.navDesktop}>
+      <div className={styles.navDesktop} data-testid='navigation-bar'>
         <Image src={require("../assets/icons/shiso-logo-default.svg")} alt="brand default logo"/>
         <ul>
           {desktopPages.map(page =>
-            page.name == props.currentPage
-            ? <Link href={page.href} key={page.name} className={styles.navDesktopActive}>{page.name.toUpperCase()}</Link>
-            : <Link href={page.href} key={page.name}>{page.name.toUpperCase()}</Link>
+            <Link
+              href={page.href}
+              key={page.name}
+              className={page.name == props.currentPage ? styles.navDesktopActive : ''}
+              role='desktop-navbar-item'
+            >
+              {page.name.toUpperCase()}
+            </Link>
           )}
         </ul>
       </div>
@@ -27,18 +32,18 @@ export default function Navbar(props: { currentPage?: string; }) {
         <Image src={require("../assets/icons/shiso-logo-default.svg")} alt="brand default logo"/>
       </div>
 
-      <div className={styles.navMobile}>
+      <div className={styles.navMobile} data-testid='navigation-bar'>
         <ul className={styles.navbarMobile}>
           {mobilePages.map(page =>
-            page.link.name == props.currentPage
-            ? <Link href={page.link.href} key={page.link.name} className={styles.navbarMobileActive}>
-                <Image src={page.icon} alt={page.alt}/>
-                {page.link.name}
-              </Link>
-            : <Link href={page.link.href} key={page.link.name}>
-                <Image src={page.icon} alt={page.alt}/>
-                {page.link.name}
-              </Link>
+            <Link
+              href={page.link.href}
+              key={page.link.name}
+              className={page.link.name == props.currentPage ? styles.navbarMobileActive : ''}
+              role='mobile-navbar-item'
+            >
+              <Image src={page.icon} alt={page.alt}/>
+              {page.link.name}
+            </Link>
           )}
           <div onClick={() => setIsOpen(true)} className={styles.hamburgerMenu}>
             <Image src={require("../assets/icons/more-icon.svg")} alt="menu icon"/>
@@ -66,6 +71,7 @@ export default function Navbar(props: { currentPage?: string; }) {
             <Link href="/franchise">BECOME A FRANCHISE PARTNER</Link>
           </div>
         </ul>
+
         <div className={styles.closeIcon} onClick={() => setIsOpen(false)}>X</div>
       </div>
     </>
