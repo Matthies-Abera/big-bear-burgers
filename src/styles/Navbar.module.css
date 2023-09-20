@@ -95,8 +95,9 @@
     background-color: var(--subtext);
     bottom: 0;
     height: 4.5rem;
-    position: absolute;
+    position: fixed;
     width: calc(100%);
+    z-index: 1;
 }
 
 .navMobileHeader {
