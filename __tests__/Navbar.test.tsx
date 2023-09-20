@@ -1,5 +1,4 @@
 /* TODO: CREATE TESTS FOR OPEN AND CLOSE MOBILE NAVIGATION BAR STATES (LOW PRIORITY) */
-
 import { render, screen } from '@testing-library/react'
 import Navbar from '@/components/Navbar'
 import { desktopPages, mobilePages } from '@/utils/BusinessInformation'

@@ -1,11 +1,10 @@
 /* TODO: EDIT CLOSE ICON TO LOOK LIKE WEBSITE (LOW PRIORITY) */
-
-"use client";
-import Link from 'next/link';
-import styles from '../styles/Navbar.module.css';
-import Image from 'next/image';
-import { useState } from 'react';
-import { desktopPages, mobilePages } from '@/utils/BusinessInformation';
+"use client"
+import Link from 'next/link'
+import styles from '../styles/Navbar.module.css'
+import Image from 'next/image'
+import { useState } from 'react'
+import { desktopPages, mobilePages } from '@/utils/BusinessInformation'
 
 export default function Navbar(props: { currentPage?: string; }) {
   const [isOpen, setIsOpen] = useState(false);
