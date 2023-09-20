@@ -12,6 +12,14 @@ export let desktopPages: page[] = [
     {href: "/jobs", name: "Jobs"},
 ];
 
+export let footerPages: page[] = [
+    {href: "/", name: "Home"},
+    {href: "/location", name: "Locations"},
+    {href: "/menu", name: "Menu"},
+    {href: "/about", name: "About"},
+    {href: "/franchise", name: "Franchise"},
+]
+
 interface mobileLink {
     link: page,
     icon: typeof import("*.svg"),

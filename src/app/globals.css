@@ -7,8 +7,10 @@
     --buttons: #F22B32;
     --hero: #F4E7CD;
     --neutral: #FFFDF5;
+    --white: #FFFFFF;
     --subtext: #1A211E;
     --titles: #000000;
+    --footer: #19211e;
 }
 
 a {
@@ -22,6 +24,26 @@ body {
     background-color: var(--neutral);
     display: flex;
     justify-items: center;
+    margin: 0;
+}
+
+button {
+    font-family: 'Roboto';
+    font-size: 1rem;
+    background-color: var(--buttons);
+    border-radius: 0.75em;
+    border: none;
+    color: var(--neutral);
+    padding: 1em;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-family: 'Montserrat';
     margin: 0;
 }
 

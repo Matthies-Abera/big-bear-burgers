@@ -1,0 +1,62 @@
+.additionalLinks {
+    align-items: flex-end;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.additionalLinks a {
+    color: var(--neutral);
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 0.125rem;
+}
+
+.backgroundLogo {
+    bottom: 0;
+    height: 28rem;
+    position: fixed;
+    right: -3rem;
+    width: 28rem;
+}
+
+.externalLinks {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer {
+    background-color: var(--footer);
+    display: grid;
+    gap: 1rem;
+    padding: 5rem 2rem 10rem 2rem;
+}
+
+.footer p {
+    color: var(--neutral);
+    display: flex;
+    justify-content: center;
+}
+
+.middleContact {
+    display: grid;
+    gap: 1rem;
+}
+
+.pageLinks {
+    display: grid;
+    gap: 1rem;
+}
+
+.pageLinks a {
+    color: var(--neutral);
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+}
+
+.verticalLine {
+    border-left: 1px solid var(--neutral);
+    height: 1rem;
+  }
