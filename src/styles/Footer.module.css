@@ -28,13 +28,17 @@
 }
 
 .footer {
+    width: 100dvw;
     background-color: var(--footer);
+}
+
+.footerContent {
     display: grid;
     gap: 1rem;
     padding: 5rem 2rem 10rem 2rem;
 }
 
-.footer p {
+.footerContent p {
     color: var(--neutral);
     display: flex;
     justify-content: center;
@@ -59,4 +63,38 @@
 .verticalLine {
     border-left: 1px solid var(--neutral);
     height: 1rem;
-  }
+}
+
+@media (min-width: 768px) {
+    .careerButton {
+        align-items: flex-end;
+        display: grid;
+    }
+
+    .careerButton, .footerContent img  {
+        padding-bottom: 2rem;
+    }
+    
+    .footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footerContent {
+        display: flex;
+        justify-content: space-between;
+        max-width: 73.75rem;
+        padding: 4rem 2rem;
+        width: 100%;
+    }
+
+    .middleContact {
+        gap: 2rem;
+        justify-content: space-evenly;
+    }
+
+    .pageLinks {
+        display: flex;
+        flex-direction: column;
+    }
+}

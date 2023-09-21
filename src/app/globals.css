@@ -31,7 +31,7 @@ button {
     font-family: 'Roboto';
     font-size: 1rem;
     background-color: var(--buttons);
-    border-radius: 0.75em;
+    border-radius: 0.5em;
     border: none;
     color: var(--neutral);
     padding: 1em;
@@ -68,6 +68,10 @@ ul {
         display: flex;
         justify-content: center;
         padding: 0 1.5rem;
+    }
+
+    button {
+        padding: 1.5em 2em;
     }
 }
 
