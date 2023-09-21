@@ -11,12 +11,16 @@ export default function Footer() {
             <div className={styles.footerContent}>
                 <div className={styles.pageLinks}>
                     {footerPages.map(page =>
-                        <Link href={page.href} key={page.name}>{page.name.toUpperCase()}</Link>
+                        <Link href={page.href} key={page.name} data-testid='footer-link'>{page.name.toUpperCase()}</Link>
                     )}
                 </div>
 
                 <div className={styles.middleContact}>
-                    <Image src={require("../assets/icons/Shiso-Logo-White.svg")} alt="brand white logo" onClick={() => window.scrollTo(0, 0)}/>
+                    <Image
+                        src={require("../assets/icons/Shiso-Logo-White.svg")}
+                        alt="brand white logo"
+                        onClick={() => window.scrollTo(0, 0)}
+                    />
                     <p>Copyright 2022 - Shiso Burger BmbH</p>
                     <div className={styles.additionalLinks}>
                         <Link href="/contact">Contact</Link>
@@ -26,13 +30,37 @@ export default function Footer() {
                         <Link href="/policy">Privacy</Link>
                     </div>
                     <div className={styles.externalLinks}>
-                        <Image src={require("../assets/icons/instagram.svg")} alt="brand default logo"/>
-                        <Image src={require("../assets/icons/linkedin.svg")} alt="brand default logo"/>
+                        <Link
+                            href="https://www.instagram.com/shisoburger/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-testid='social-media-link'
+                        >
+                            <Image src={require("../assets/icons/instagram.svg")} alt="brand default logo"/>
+                        </Link>
+                        <Link
+                            href="https://www.linkedin.com/company/shiso-burger/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-testid='social-media-link'
+                        >
+                            <Image src={require("../assets/icons/linkedin.svg")} alt="brand default logo"/>
+                        </Link>
                     </div>
                 </div>
 
-                <Link className={styles.careerButton} href="/careers"><button>WORK WITH US!</button></Link>
-                <Image src={require("../assets/icons/shiso-dog-cooking.svg")} alt="mascot cooking" className={styles.backgroundLogo}/>
+                <Link
+                    className={styles.careerButton}
+                    href="/careers"
+                    data-testid='careers-button'
+                >
+                    <button>WORK WITH US!</button>
+                </Link>
+                <Image
+                    src={require("../assets/icons/shiso-dog-cooking.svg")}
+                    alt="mascot cooking"
+                    className={styles.backgroundLogo}
+                />
             </div>
         </div>
     )
