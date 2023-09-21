@@ -20,6 +20,7 @@ export default function Navbar(props: { currentPage?: string; }) {
               key={page.name}
               className={page.name == props.currentPage ? styles.navDesktopActive : ''}
               role='desktop-navbar-item'
+              target={page.target}
             >
               {page.name.toUpperCase()}
             </Link>
@@ -39,6 +40,7 @@ export default function Navbar(props: { currentPage?: string; }) {
               key={page.link.name}
               className={page.link.name == props.currentPage ? styles.navbarMobileActive : ''}
               role='mobile-navbar-item'
+              target={page.link.target}
             >
               <Image src={page.icon} alt={page.alt}/>
               {page.link.name}

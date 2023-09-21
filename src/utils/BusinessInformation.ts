@@ -1,14 +1,15 @@
 interface page {
     href: string,
-    name: string
+    name: string,
+    target?: "_blank"
 };
   
 export let desktopPages: page[] = [
     {href: "/menu", name: "Menu"},
     {href: "/location", name: "Locations"},
     {href: "/about", name: "About"},
-    {href: "/order", name: "Order"},
-    {href: "/merch", name: "Merch"},
+    {href: "https://www.shisoburger.com/careers", name: "Order", target: "_blank"},
+    {href: "https://shop.shisoburger.com/", name: "Merch", target: "_blank"},
     {href: "/jobs", name: "Jobs"},
 ];
 
@@ -38,7 +39,7 @@ export let mobilePages: mobileLink[] = [
         alt: "location icon"
     },
     {
-        link: {href: "/order", name: "Order"},
+        link: {href: "https://www.shisoburger.com/careers", name: "Order", target: "_blank"},
         icon: require("../assets/icons/icon-order.svg"),
         alt: "order icon"
     }
