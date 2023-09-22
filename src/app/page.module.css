@@ -1,0 +1,39 @@
+.home {
+    display: grid;
+    justify-items: center;
+    width: 100dvw;
+}
+
+.heroSection {
+    max-width: 73.75rem;
+    padding-left: 1rem;
+}
+
+.heroSection, .video {
+    width: calc(100dvw - 1rem);
+}
+
+.heroTitle {
+    position: relative;
+    top: -4.5rem;
+}
+
+@media (min-width: 768px) {
+    .heroSection {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem 0 4rem;
+        width: calc(100dvw - 5rem);
+    }
+
+    .heroTitle {
+        left: -2rem;
+        top: -11rem;
+    }
+
+    .video {
+        align-self: flex-end;
+        display: flex;
+        width: 43rem;
+    }
+}
