@@ -11,7 +11,7 @@ export default function Navbar(props: { currentPage?: string; }) {
 
   return (
     <>
-      <div className={styles.navDesktop} data-testid='navigation-bar'>
+      <section className={styles.navDesktop} data-testid='navigation-bar'>
         <Image src={require("../assets/icons/shiso-logo-default.svg")} alt="brand default logo"/>
         <ul>
           {desktopPages.map(page =>
@@ -26,7 +26,7 @@ export default function Navbar(props: { currentPage?: string; }) {
             </Link>
           )}
         </ul>
-      </div>
+      </section>
 
       <div className={styles.navMobileHeader}>
         <Image src={require("../assets/icons/shiso-logo-default.svg")} alt="brand default logo"/>

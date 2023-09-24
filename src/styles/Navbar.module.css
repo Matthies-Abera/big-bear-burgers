@@ -11,7 +11,6 @@
     gap: 3rem;
     height: 14.375rem;
     justify-content: space-between;
-    max-width: 73.75rem;
     width: calc(100vw - 3rem);
 }
 

@@ -8,7 +8,7 @@ import { footerPages } from '@/utils/BusinessInformation'
 export default function Footer() {
     return (
         <div className={styles.footer}>
-            <div className={styles.footerContent}>
+            <section className={styles.footerContent}>
                 <div className={styles.pageLinks}>
                     {footerPages.map(page =>
                         <Link href={page.href} key={page.name} data-testid='footer-link'>{page.name.toUpperCase()}</Link>
@@ -61,7 +61,7 @@ export default function Footer() {
                     alt="mascot cooking"
                     className={styles.backgroundLogo}
                 />
-            </div>
+            </section>
         </div>
     )
 }
