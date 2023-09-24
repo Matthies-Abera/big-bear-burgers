@@ -33,6 +33,7 @@
 }
 
 .locationSection p {
+    max-width: 55.5rem;
     letter-spacing: 0.1em;
     line-height: 1.5;
     padding-right: 1rem;
@@ -40,6 +41,8 @@
 
 @media (min-width: 768px) {
     .burgerImage {
+        left: 5rem;
+        width: 25.5rem;
         grid-area: image;
     }
 
