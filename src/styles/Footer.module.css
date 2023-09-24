@@ -83,7 +83,6 @@
     .footerContent {
         display: flex;
         justify-content: space-between;
-        max-width: 73.75rem;
         padding: 4rem 2rem;
         width: 100%;
     }
