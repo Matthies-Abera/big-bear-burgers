@@ -1,3 +1,12 @@
+.burgerImage {
+    height: auto;
+    justify-self: flex-end;
+    left: 3rem;
+    object-fit: cover;
+    position: relative;
+    width: clamp(80%, 100dvw ,90%);
+}
+
 .home {
     display: grid;
     justify-items: center;
@@ -5,7 +14,6 @@
 }
 
 .heroSection {
-    max-width: 73.75rem;
     padding-left: 1rem;
 }
 
@@ -18,7 +26,23 @@
     top: -4.5rem;
 }
 
+.locationSection {
+    display: grid;
+    gap: 2rem;
+    padding:  0 0 3rem 1rem;
+}
+
+.locationSection p {
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    padding-right: 1rem;
+}
+
 @media (min-width: 768px) {
+    .burgerImage {
+        grid-area: image;
+    }
+
     .heroSection {
         display: flex;
         flex-direction: column;
@@ -29,6 +53,33 @@
     .heroTitle {
         left: -2rem;
         top: -11rem;
+    }
+
+    .locationSection {
+        padding:  0 0 3rem 3rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            'intro intro'
+            'body image'
+            'body image'
+            'button nothing'
+        ;
+    }
+
+    .locationSection a {
+        grid-area: button
+    }
+
+    .locationSection p {
+        font-size: 1.25rem;
+    }
+
+    .locationSection p:nth-child(1) {
+        grid-area: intro;
+    }
+
+    .locationSection p:nth-child(2) {
+        grid-area: body;
     }
 
     .video {
