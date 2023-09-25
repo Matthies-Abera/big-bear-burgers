@@ -48,12 +48,21 @@ html {
 
 h1 {
     font-size: 3.25rem;
+    margin: 0;
     transition: font-size 0.6s ease-in-out;
+}
+
+h2 {
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 p {
     font-family: 'Montserrat';
     font-weight: 200;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
     margin: 0;
 }
 

@@ -1,12 +1,3 @@
-.burgerImage {
-    height: auto;
-    justify-self: flex-end;
-    left: 3rem;
-    object-fit: cover;
-    position: relative;
-    width: clamp(80%, 100dvw ,90%);
-}
-
 .home {
     display: grid;
     justify-items: center;
@@ -23,8 +14,10 @@
 
 .heroTitle {
     position: relative;
-    top: -4.5rem;
+    top: -2.5rem;
 }
+
+/* LOCATION SECTION */
 
 .locationSection {
     display: grid;
@@ -32,20 +25,42 @@
     padding:  0 0 3rem 1rem;
 }
 
+.locationSection img {
+    height: auto;
+    justify-self: flex-end;
+    left: 3rem;
+    object-fit: cover;
+    position: relative;
+    width: clamp(80%, 100dvw ,90%);
+}
+
 .locationSection p {
-    max-width: 55.5rem;
-    letter-spacing: 0.1em;
-    line-height: 1.5;
     padding-right: 1rem;
 }
 
-@media (min-width: 768px) {
-    .burgerImage {
-        left: 5rem;
-        width: 25.5rem;
-        grid-area: image;
-    }
+/* NEW PRODUCT SECTION */
 
+.newProductSection {
+    background-color: var(--hero);
+    display: inline;
+    padding: 3rem 0 5rem 0;
+}
+
+.newProductSection h2, .newProductSection p, .newProductSection div {
+    left: 4rem;
+    padding-right: 7rem;
+    position: relative;
+}
+
+.newProductSection img {
+    height: auto;
+    max-width: 31.25rem;
+    width: 100dvw !important;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
     .heroSection {
         display: flex;
         flex-direction: column;
@@ -55,34 +70,21 @@
 
     .heroTitle {
         left: -2rem;
-        top: -11rem;
+        top: -7rem;
     }
 
     .locationSection {
-        padding:  0 0 3rem 3rem;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
-            'intro intro'
-            'body image'
-            'body image'
-            'button nothing'
-        ;
+        display: inline-block;
     }
 
-    .locationSection a {
-        grid-area: button
+    .locationSection img {
+        float: right;
+        width: 25.5rem;
     }
 
     .locationSection p {
         font-size: 1.25rem;
-    }
-
-    .locationSection p:nth-child(1) {
-        grid-area: intro;
-    }
-
-    .locationSection p:nth-child(2) {
-        grid-area: body;
+        padding-bottom: 1.5rem;
     }
 
     .video {
@@ -91,3 +93,15 @@
         width: 43rem;
     }
 }
+
+/* align-self: center;
+color: var(--accent);
+display: flex;
+float: left;
+font-family: 'Roboto';
+gap: 0.5rem;
+left: -7.5rem;
+left: 4rem;
+letter-spacing: 0.1em;
+rotate: -90deg;
+top: -10.5rem; */
