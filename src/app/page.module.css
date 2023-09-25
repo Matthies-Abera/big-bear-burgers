@@ -40,22 +40,53 @@
 
 /* NEW PRODUCT SECTION */
 
-.newProductSection {
-    background-color: var(--hero);
-    display: inline;
-    padding: 3rem 0 5rem 0;
+.newProductInfo {
+    align-items: flex-end;
+    bottom: clamp(7.5rem, 27.5dvw, 12.5rem);
+    display: grid;
+    grid-template-areas:
+        'vertical nothing' 
+        'vertical nothing'
+        'vertical title'
+        'vertical description'
+    ;
+    grid-template-columns: 2rem auto;
+    padding: 3rem 4rem 0 1rem;
+    position: relative;
+    row-gap: 1rem;
 }
 
-.newProductSection h2, .newProductSection p, .newProductSection div {
-    left: 4rem;
-    padding-right: 7rem;
-    position: relative;
+.newProductInfo div {
+    color: var(--accent);
+    display: flex;
+    font-family: 'Roboto';
+    font-size: 0.75rem;
+    gap: 1rem;
+    grid-area: vertical;
+    justify-self: center;
+    letter-spacing: 0.1em;
+    rotate: 180deg;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+}
+
+.newProductInfo h2 {
+    grid-area: title;
 }
 
 .newProductSection img {
+    grid-area: image;
     height: auto;
     max-width: 31.25rem;
-    width: 100dvw !important;
+}
+
+.newProductInfo p {
+    grid-area: description;
+}
+
+.newProductSection {
+    background-color: var(--hero);
+    padding-top: 3rem;
 }
 
 /* MEDIA QUERIES */
@@ -72,6 +103,8 @@
         left: -2rem;
         top: -7rem;
     }
+
+    /* LOCATION SECTION */
 
     .locationSection {
         display: inline-block;
@@ -92,16 +125,44 @@
         display: flex;
         width: 43rem;
     }
+
+    /* NEW PRODUCT SECTION */
+
+    .newProductInfo {
+        bottom: 0;
+        gap: 0;
+        max-width: 37rem;
+        padding: 0 0 2rem 0;
+        position: relative;
+        right: 3.5rem;
+        transition: bottom 0.4s ease-in
+    }
+    
+    .newProductSection img {
+        max-width: 34rem;
+        object-fit: contain;
+        width: 50%;
+    }
+
+    .newProductSection {
+        background-color: var(--neutral);
+        display: flex;
+        margin: 3rem 0 3rem 1rem;
+        padding: 0;
+        transition: background-color 0.6s ease-in;
+    }
+
+    .newProductSection:hover {
+        background-color: var(--hero);
+    }
 }
 
-/* align-self: center;
-color: var(--accent);
-display: flex;
-float: left;
-font-family: 'Roboto';
-gap: 0.5rem;
-left: -7.5rem;
-left: 4rem;
-letter-spacing: 0.1em;
-rotate: -90deg;
-top: -10.5rem; */
+@media (min-width: 1180px) {
+    .newProductInfo {
+        bottom: 3rem;
+    }
+    
+    .newProductSection {
+        margin: 3rem 0;
+    }
+}

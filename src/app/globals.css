@@ -54,8 +54,16 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    margin: 0;
     position: relative;
     z-index: 1;
+}
+
+hr {
+    background-color: var(--accent);
+    border: none;
+    height: 4rem;
+    width: 0.125rem;
 }
 
 p {
@@ -100,9 +108,18 @@ ul {
     h1 {
         font-size: 6rem;
     }
+
+    h2 {
+        font-size: 2.5rem;
+    }
 }
 
 /* LAPTOP */
+@media (min-width: 1024px) {
+    
+}
+
+/* LAPTOP - MAX SECTION WIDTH */
 @media (min-width: 1024px) {
     
 }

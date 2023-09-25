@@ -28,8 +28,11 @@ export default function Home() {
 
       <section className={styles.newProductSection}>
         <Image src={require('../assets/images/burger-foregound.avif')} alt=''/>
-        <h2>NEW BURGER - BUL DAK Burger</h2>
-        <p>Shiso Burger - Burger Family just got bigger! The BUL DAK Burger is now here, our spicy fried Chicken Burger. Only in Berlin Augustr.</p>
+        <div className={styles.newProductInfo}>
+          <h2>NEW BURGER - BUL DAK Burger</h2>
+          <p>Shiso Burger - Burger Family just got bigger! The BUL DAK Burger is now here, our spicy fried Chicken Burger. Only in Berlin Augustr.</p>
+          <div><hr/>MENU PRODUCT</div>
+        </div>
       </section>
 
       <Footer />
