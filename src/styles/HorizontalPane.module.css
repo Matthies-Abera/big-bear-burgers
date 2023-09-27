@@ -1,0 +1,96 @@
+.moreInfoContainer {
+    align-items: flex-end;
+    display: grid;
+    grid-template-areas:
+        'vertical title'
+        'vertical description'
+        'blank button'
+    ;
+    grid-template-columns: 4rem auto;
+    padding-right: 3rem;
+    position: relative;
+    row-gap: 1rem;
+}
+
+.moreInfoContainer a {
+    grid-area: button;
+    padding-top: 1rem;
+}
+
+.moreInfoContainer div {
+    align-self: flex-end;
+    color: var(--accent);
+    display: flex;
+    font-family: 'Roboto';
+    font-size: 0.75rem;
+    gap: 1rem;
+    grid-area: vertical;
+    justify-self: center;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.25em;
+    rotate: 180deg;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+}
+
+.moreInfoContainer::before {
+    background: var(--hero);
+    bottom: 2rem;
+    content: '';
+    position: absolute;
+    top: -1rem;
+    width: 60%;
+    z-index: -1;
+}
+
+.moreInfoSection img {
+    height: auto;
+    width: 100dvw;
+}
+
+@media (min-width: 768px) {
+    .moreInfoContainer a {
+        position: relative;
+    }
+
+    .moreInfoContainer::before {
+        background-color: var(--neutral);
+        bottom: 2rem;
+        left: -5rem;
+        padding: 3rem 5rem 0 0;
+        top: -3rem;
+        transition: background-color 0.6s;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .moreInfoContainer:hover::before {
+        background-color: var(--hero);
+    }
+
+    .moreInfoSection {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-areas: 'left right';
+        margin-left: 1rem;
+        margin-top: 6rem;
+    }
+
+    .moreInfoSection img {
+        align-self: flex-end;
+        height: auto;
+        max-width: 36.875rem;
+        object-fit: contain;
+        width: 50dvw;
+        z-index: 1;
+    }
+
+    .moreInfoSection:nth-child(odd) > div::before {
+        left: 0;
+        padding: 3rem 0 0 5rem;
+    }
+
+    .moreInfoSection:nth-child(odd) img {
+        grid-area: right;
+    }
+}

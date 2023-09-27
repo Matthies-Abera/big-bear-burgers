@@ -1,11 +1,14 @@
 /* TODO: FIX ALIGNMENT IN LOCATION SECTION FOR DESKTOP VIEWPORT */
 /* TODO: FIGURE OUT HOW TO IMPLEMENT VERTICAL LINES */
+/* TODO: IMPLEMENT FOG FADE ON IMAGES (LOW PRIORITY) */
 
 import Navbar from '@/components/Navbar'
 import styles from './page.module.css'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
+import HorizontalPane from '@/components/HorizontalPane'
+import { HPHorizontalPanes } from '@/utils/BusinessInformation'
 
 export default function Home() {
   return (
@@ -34,6 +37,17 @@ export default function Home() {
           <div><hr/>MENU PRODUCT</div>
         </div>
       </section>
+
+      {HPHorizontalPanes.map(page =>
+        <HorizontalPane
+          image={page.image}
+          title={page.title}
+          description={page.description}
+          verticalText={page.verticalText}
+          link={page.link}
+          key={page.title}
+        />
+      )}
 
       <Footer />
     </div>

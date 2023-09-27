@@ -45,8 +45,8 @@
     bottom: clamp(7.5rem, 27.5dvw, 12.5rem);
     display: grid;
     grid-template-areas:
-        'vertical nothing' 
-        'vertical nothing'
+        'vertical blank' 
+        'vertical blank'
         'vertical title'
         'vertical description'
     ;
@@ -75,7 +75,6 @@
 }
 
 .newProductSection img {
-    grid-area: image;
     height: auto;
     max-width: 31.25rem;
 }
@@ -135,19 +134,19 @@
         padding: 0 0 2rem 0;
         position: relative;
         right: 3.5rem;
-        transition: bottom 0.4s ease-in
+        transition: bottom 0.4s ease-in;
     }
     
     .newProductSection img {
         max-width: 34rem;
         object-fit: contain;
-        width: 50%;
+        width: 55%;
     }
 
     .newProductSection {
         background-color: var(--neutral);
         display: flex;
-        margin: 3rem 0 3rem 1rem;
+        margin-left: 1rem;
         padding: 0;
         transition: background-color 0.6s ease-in;
     }
@@ -163,6 +162,6 @@
     }
     
     .newProductSection {
-        margin: 3rem 0;
+        width: 73.75rem;
     }
 }
