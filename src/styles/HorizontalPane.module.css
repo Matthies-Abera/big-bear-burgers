@@ -43,6 +43,10 @@
     z-index: -1;
 }
 
+.moreInfoSection:nth-child(odd) > div::before {
+    right: 0;
+}
+
 .moreInfoSection img {
     height: auto;
     width: 100dvw;

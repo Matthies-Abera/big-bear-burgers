@@ -32,15 +32,23 @@ body {
 }
 
 button {
-    font-family: 'Roboto';
-    font-size: 1rem;
     background-color: var(--buttons);
     border-radius: 0.5em;
-    border: none;
+    border: .25rem solid var(--buttons);
     color: var(--neutral);
+    display: flex;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    line-height: 1.5rem;
     padding: 1em;
     text-align: left;
-    line-height: 1.5rem;
+    transition: background-color 0.2s, border 0.2s, 0.2s;
+}
+
+button:hover {
+    background-color: var(--neutral);
+    border: .25rem solid var(--accent);
+    color: var(--accent);
 }
 
 html {

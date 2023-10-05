@@ -6,7 +6,7 @@ import { HPHorizontalPaneData } from '@/utils/BusinessInformation'
 export default function HorizontalPane(data: HPHorizontalPaneData) {
   return (
     <section className={styles.moreInfoSection}>
-      <Image src={data.image} alt='' className={styles.reversedImage}/>
+      <Image src={data.image} alt={data.description} className={styles.reversedImage}/>
       <div className={styles.moreInfoContainer}>
         <h2>{data.title}</h2>
         <p>{data.description}</p>
