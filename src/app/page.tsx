@@ -40,11 +40,8 @@ export default function Home() {
       {HPHorizontalPanes.map(page =>
         <HorizontalPane
           image={page.image}
-          title={page.title}
-          description={page.description}
-          verticalText={page.verticalText}
-          link={page.link}
-          key={page.title}
+          content={page.content}
+          key={page.content.title}
         />
       )}
 
