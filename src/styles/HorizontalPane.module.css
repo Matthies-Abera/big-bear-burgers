@@ -32,5 +32,7 @@
 
     .horizontalPane:nth-child(odd) img {
         grid-area: right;
+        position: relative;
+        right: 2rem;
     }
 }

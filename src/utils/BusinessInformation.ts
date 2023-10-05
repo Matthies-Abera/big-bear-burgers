@@ -1,6 +1,6 @@
 // SHOULD I BE EXPORTING INTERFACES?
 
-interface page {
+export interface page {
     href: string,
     name: string,
     target?: "_blank"
@@ -88,3 +88,14 @@ export let HPHorizontalPanes: HPHorizontalPaneData[] = [
         }
     }
 ]
+
+export let exploreData: ThreePaneContainer = {
+    title: 'Shiso Burger Locations around the World',
+    description: 'We pride ourselves not only in our food but also the unique experience of eating at one of our restaurants. Our journey began in Berlin, but these days you can enjoy Shiso Burgers in many cities around Europe and worldwide.',
+    verticalText: 'VISIT US',
+    hasButton: true,
+    link: {
+        href: '/location',
+        name: 'FIND A RESTAURANT'
+    } 
+}
