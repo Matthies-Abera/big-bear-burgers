@@ -43,7 +43,7 @@ button {
     line-height: 1.5rem;
     padding: 0.85em 1em;
     text-align: left;
-    transition: background-color 0.2s, border 0.2s, 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
 button:hover {
@@ -127,11 +127,6 @@ ul {
 }
 
 /* LAPTOP */
-@media (min-width: 1024px) {
-    
-}
-
-/* LAPTOP - MAX SECTION WIDTH */
 @media (min-width: 1024px) {
     
 }

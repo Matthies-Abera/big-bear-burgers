@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import styles from '../styles/HorizontalPane.module.css'
 import { HPHorizontalPaneData } from '@/utils/BusinessInformation'
@@ -16,4 +17,4 @@ export default function HorizontalPane(data: HPHorizontalPaneData) {
       /> 
     </section>
   )
-}
+} 

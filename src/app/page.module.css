@@ -4,11 +4,11 @@
     width: 100dvw;
 }
 
-.heroSection {
-    padding-left: 1rem;
+.heroContainer, .newProductContainer {
+    margin-left: 1rem;
 }
 
-.heroSection, .video {
+.heroContainer, .video {
     width: calc(100dvw - 1rem);
 }
 
@@ -19,13 +19,18 @@
 
 /* LOCATION SECTION */
 
-.locationSection {
+.locationContainer {
     display: grid;
     gap: 2rem;
     padding:  0 0 3rem 1rem;
 }
 
-.locationSection img {
+.locationContainer > div {
+    display: inherit;
+    gap: 2rem;
+}
+
+.locationContainer img {
     height: auto;
     justify-self: flex-end;
     left: 3rem;
@@ -34,78 +39,45 @@
     width: clamp(80%, 100dvw ,90%);
 }
 
-.locationSection p {
+.locationContainer p {
     padding-right: 1rem;
 }
 
 /* NEW PRODUCT SECTION */
 
-.newProductInfo {
-    align-items: flex-end;
-    bottom: clamp(7.5rem, 27.5dvw, 12.5rem);
-    display: grid;
-    grid-template-areas:
-        'vertical blank' 
-        'vertical blank'
-        'vertical title'
-        'vertical description'
-    ;
-    grid-template-columns: 2rem auto;
-    padding: 3rem 4rem 0 1rem;
-    position: relative;
-    row-gap: 1rem;
-}
-
-.newProductInfo div {
-    color: var(--accent);
-    display: flex;
-    font-family: 'Roboto';
-    font-size: 0.75rem;
-    gap: 1rem;
-    grid-area: vertical;
-    justify-self: center;
-    letter-spacing: 0.1em;
-    rotate: 180deg;
-    text-orientation: mixed;
-    writing-mode: vertical-rl;
-}
-
-.newProductInfo h2 {
-    grid-area: title;
-}
-
-.newProductSection img {
+.newProductContainer img {
     height: auto;
     max-width: 31.25rem;
 }
 
-.newProductInfo p {
-    grid-area: description;
-}
-
-.newProductSection {
+.newProductContainer {
     background-color: var(--hero);
     padding-top: 3rem;
 }
 
+.newProductContainer > div {
+    bottom: 7rem;
+    position: relative;
+}
+
 /* EXPLORE SECTION */
 
-.exploreSection {
+.exploreContainer {
     display: grid;
     width: 100dvw;
 }
 
-.exploreSection > div {
+.exploreContainer > div {
     padding-left: 3rem;
 }
 
-.exploreSection div::before {
+.exploreContainer div::before {
     height: clamp(53rem, 130dvw, 60rem);
     right: 0;
     top: -4rem;
 }
 
-.exploreSection img:first-child {
+.exploreContainer img:first-child {
     height: auto;
     justify-self: flex-end;
     position: relative;
@@ -114,7 +86,7 @@
     width: 45%;
 }
 
-.exploreSection img:last-child {
+.exploreContainer img:last-child {
     height: auto;
     margin-top: 2rem;
     object-fit: contain;
@@ -123,25 +95,25 @@
 
 /* FRANCHISE SECTION */
 
-.franchiseSection {
+.franchiseContainer {
     display: grid;
     left: 1rem;
     padding-bottom: 4rem;
     position: relative;
 }
 
-.franchiseSection > div {
+.franchiseContainer > div {
     bottom: 6rem;
     position: relative;
 }
 
-.franchiseSection > div::before {
+.franchiseContainer > div::before {
     height: 120%;
     top: 0;
     width: 100%;
 }
 
-.franchiseSection img {
+.franchiseContainer img {
     background-color: var(--hero);
     height: auto;
     object-fit: contain;
@@ -151,7 +123,7 @@
 /* MEDIA QUERIES */
 
 @media (min-width: 768px) {
-    .heroSection {
+    .heroContainer {
         display: flex;
         flex-direction: column;
         padding: 0 1rem 0 4rem;
@@ -163,83 +135,92 @@
         top: -7rem;
     }
 
-    /* LOCATION SECTION */
-
-    .locationSection {
-        display: inline-block;
-    }
-
-    .locationSection img {
-        float: right;
-        width: 25.5rem;
-    }
-
-    .locationSection p {
-        font-size: 1.25rem;
-        padding-bottom: 1.5rem;
-    }
-
     .video {
         align-self: flex-end;
         display: flex;
         width: 43rem;
     }
 
-    /* NEW PRODUCT SECTION */
+    /* LOCATION SECTION */
 
-    .newProductInfo {
-        bottom: 0;
-        gap: 0;
-        max-width: 37rem;
-        padding: 0 0 2rem 0;
-        position: relative;
-        right: 3.5rem;
-        transition: bottom 0.4s ease-in;
+    .locationContainer {
+        display: inline-block;
     }
+
+    .locationContainer img {
+        grid-area: image;
+        width: 25.5rem;
+    }
+
+    .locationContainer p {
+        font-size: 1.25rem;
+        grid-area: blurb;
+        padding-bottom: 1.5rem;
+    }
+
+    .locationContainer > div {
+        display: grid;
+        grid-template-areas: 
+        'blurb image'
+        'button image'
+        ;
+        max-width: 65rem;
+    }
+
+    /* NEW PRODUCT SECTION */
     
-    .newProductSection img {
+    .newProductContainer img {
         max-width: 34rem;
         object-fit: contain;
         width: 55%;
     }
 
-    .newProductSection {
+    .newProductContainer {
         background-color: var(--neutral);
         display: flex;
-        margin-left: 1rem;
         padding: 0;
         transition: background-color 0.6s ease-in;
     }
 
-    .newProductSection:hover {
+    .newProductContainer:hover {
         background-color: var(--hero);
+    }
+
+    .newProductContainer > div {
+        bottom: 0;
+        left: -3rem;
+        position: relative;
+    }
+
+    .newProductContainer > div::before {
+        display: none;
     }
 
     /* EXPLORE SECTION */
 
-    .exploreSection {
+    .exploreContainer {
         display: flex;
         margin-top: 3rem;
     }
 
-    .exploreSection > div {
+    .exploreContainer > div {
         margin-top: 8rem;
     }
 
-    .exploreSection div::before {
+    .exploreContainer div::before {
         height: 115%;
         left: 3rem;
         top: -8rem;
         width: 85%;
     }
     
-    .exploreSection img:first-child {
+    .exploreContainer img:first-child {
         align-self: flex-start;
         position: absolute;
         width: 25%;
     }
     
-    .exploreSection img:last-child {
+    .exploreContainer img:last-child {
         max-height: 30rem;
         position: relative;
         right: 2rem;
@@ -248,55 +229,51 @@
 
     /* FRANCHISE SECTION */
 
-    .franchiseSection {
+    .franchiseContainer {
         background-color: var(--neutral);
         display: flex;
         padding-bottom: 2rem;
         transition: background-color 0.6s ease-in;
     }
 
-    .franchiseSection:hover {
+    .franchiseContainer:hover {
         background-color: var(--hero);
         display: flex;
     }
 
-    .franchiseSection > div {
+    .franchiseContainer > div {
         bottom: 3rem;
         margin-top: 3rem;
         position: relative;
         right: 5rem;
     }
 
-    .franchiseSection > div::before {
+    .franchiseContainer > div::before {
         height: 100%;
     }
 
-    .franchiseSection img {
+    .franchiseContainer img {
         background-color: inherit;
         width: 50%;
     }
 }
 
 @media (min-width: 1180px) {
-    .newProductInfo {
-        bottom: 3rem;
-    }
-    
-    .newProductSection {
+    .newProductContainer {
         width: 73.75rem;
     }
 
-    .exploreSection > div {
+    .exploreContainer > div {
         margin-top: 0;
     }
 
-    .exploreSection div::before {
+    .exploreContainer div::before {
         height: 90%;
         left: 0;
         top: -2rem;
     }
 
-    .exploreSection img:first-child {
+    .exploreContainer img:first-child {
         position: relative;
     }
 }

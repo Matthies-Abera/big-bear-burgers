@@ -5,6 +5,27 @@ export interface page {
     name: string,
     target?: "_blank"
 };
+
+interface mobileLink {
+    link: page,
+    icon: typeof import("*.svg"),
+    alt: string
+};
+
+export interface ThreePaneContainer {
+    description: string,
+    hasButton: boolean,
+    link?: page
+    title: string,
+    verticalText: string,
+}
+
+export interface HPHorizontalPaneData {
+    content: ThreePaneContainer
+    image: typeof import("*.avif"),
+}
+
+// NAVIGATION BAR & FOOTER TEMP MOCK DATA
   
 export let desktopPages: page[] = [
     {href: "/menu", name: "Menu"},
@@ -23,90 +44,80 @@ export let footerPages: page[] = [
     {href: "/franchise", name: "Franchise"},
 ]
 
-interface mobileLink {
-    link: page,
-    icon: typeof import("*.svg"),
-    alt: string
-};
-
 export let mobilePages: mobileLink[] = [
     {
-        link: {href: "/menu", name: "Menu"},
+        alt: "menu icon",
         icon: require("../assets/icons/icon-burger.svg"),
-        alt: "menu icon"
+        link: {href: "/menu", name: "Menu"}
     },
     {
-        link: {href: "/location", name: "Locations"},
+        alt: "location icon",
         icon: require("../assets/icons/icon-location.svg"),
-        alt: "location icon"
+        link: {href: "/location", name: "Locations"}
     },
     {
-        link: {href: "https://www.shisoburger.com/careers", name: "Order", target: "_blank"},
+        alt: "order icon",
         icon: require("../assets/icons/icon-order.svg"),
-        alt: "order icon"
+        link: {href: "https://www.shisoburger.com/careers", name: "Order", target: "_blank"}
     }
 ];
 
-export interface ThreePaneContainer {
-    title: string,
-    description: string,
-    verticalText: string,
-    hasButton: boolean,
-    link?: page
-}
-
-export interface HPHorizontalPaneData {
-    image: typeof import("*.avif"),
-    content: ThreePaneContainer
-}
+// HOME PAGE TEMP MOCK DATA
 
 export let HPHorizontalPanes: HPHorizontalPaneData[] = [
-    {
-        image: require('../assets/images/man-cooking-burger.avif'),
+    { 
         content: {
-          title: 'Healthy Asian Burgers for meat eaters and vegetarians',
             description: 'Shiso Burger has brought together the advantages of conventional burgers with the traditional Asian cuisine. Healthy gourmet burgers with that Asian finesse away from the fast food culture. We always prepare our food fresh – right before your eyes in our open kitchen.',
-            verticalText: 'CONCEPT & QUALITY',
             hasButton: true,
             link: {
                 href: '/about',
                 name: 'LEARN WHAT MAKES US UNIQUE'
-            }  
-        }
+            },
+            title: 'Healthy Asian Burgers for meat eaters and vegetarians',
+            verticalText: 'CONCEPT & QUALITY'
+        },
+        image: require('../assets/images/man-cooking-burger.avif')
     },
     {
-        image: require('../assets/images/burger-bao.avif'),
         content: {
-            title: 'Come and taste the best of two worlds',
             description: 'The combination of the finest Asian cuisine and the classic burger experience makes the heart of every meat lover beat faster. Vegetarians also get their money’s worth with us. We show you that a burger does not necessarily need meat to be delicious.',
-            verticalText: 'WHAT’S FOR DINNER?',
             hasButton: true,
             link: {
                 href: '/menu',
                 name: 'SEE WHAT’S ON THE MENU',
-            }
-        }
+            },
+            title: 'Come and taste the best of two worlds',
+            verticalText: 'WHAT’S FOR DINNER?'
+        },
+        image: require('../assets/images/burger-bao.avif'),
     }
 ]
 
+export let newProductData: ThreePaneContainer = {
+    description: 'Shiso Burger - Burger Family just got bigger! The BUL DAK Burger is now here, our spicy fried Chicken Burger. Only in Berlin Augustr.',
+    hasButton: false,
+    title: 'NEW BURGER - BUL DAK Burger',
+    verticalText: 'MENU PRODUCT'
+}
+
 export let exploreData: ThreePaneContainer = {
-    title: 'Shiso Burger Locations around the World',
     description: 'We pride ourselves not only in our food but also the unique experience of eating at one of our restaurants. Our journey began in Berlin, but these days you can enjoy Shiso Burgers in many cities around Europe and worldwide.',
-    verticalText: 'VISIT US',
     hasButton: true,
     link: {
         href: '/location',
         name: 'FIND A RESTAURANT'
-    } 
+    },
+    title: 'Shiso Burger Locations around the World',
+    verticalText: 'VISIT US'
 }
 
 export let franchiseData: ThreePaneContainer = {
-    title: 'Build your own Business with Shiso Burger',
     description: 'Would you like to cooperate with us and distribute the concept and products of Shiso Burger independently? Take this opportunity, and start your own business with food that stands out from the crowd.',
-    verticalText: 'FRANCHISING',
     hasButton: true,
     link: {
         href: '/franchise',
         name: 'BECOME A FRANCHISE PARTNER'
-    } 
+    },
+    title: 'Build your own Business with Shiso Burger',
+    verticalText: 'FRANCHISING'
 }
