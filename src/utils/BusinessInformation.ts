@@ -99,3 +99,14 @@ export let exploreData: ThreePaneContainer = {
         name: 'FIND A RESTAURANT'
     } 
 }
+
+export let franchiseData: ThreePaneContainer = {
+    title: 'Build your own Business with Shiso Burger',
+    description: 'Would you like to cooperate with us and distribute the concept and products of Shiso Burger independently? Take this opportunity, and start your own business with food that stands out from the crowd.',
+    verticalText: 'FRANCHISING',
+    hasButton: true,
+    link: {
+        href: '/franchise',
+        name: 'BECOME A FRANCHISE PARTNER'
+    } 
+}

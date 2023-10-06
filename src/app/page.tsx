@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
 import HorizontalPane from '@/components/HorizontalPane'
-import { exploreData, HPHorizontalPanes } from '@/utils/BusinessInformation'
+import { exploreData, franchiseData, HPHorizontalPanes } from '@/utils/BusinessInformation'
 import ThreePaneContainer from '@/components/ThreePaneContainer'
 
 export default function Home() {
@@ -56,6 +56,17 @@ export default function Home() {
           link={exploreData.link}
         />
         <Image src={require("../assets/images/vacant-dinning.avif")} className={styles.burgerImage} alt='resh-burger-and-worker'/>
+      </section>
+
+      <section className={styles.franchiseSection}>
+        <Image src={require("../assets/images/fox.avif")} className={styles.burgerImage} alt='resh-burger-and-worker'/>
+        <ThreePaneContainer
+          title={franchiseData.title}
+          description={franchiseData.description}
+          verticalText={franchiseData.verticalText}
+          hasButton={franchiseData.hasButton}
+          link={franchiseData.link}
+        />
       </section>
 
       <Footer />
