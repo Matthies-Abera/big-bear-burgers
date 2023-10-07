@@ -15,14 +15,14 @@ export default function Home() {
     <div className={styles.home}>
       <Navbar />
 
-      <section className={styles.heroContainer}>
-        <video autoPlay muted loop className={styles.video}>         
+      <section className={styles.heroContainer} data-testid='section'>
+        <video autoPlay muted loop className={styles.video} data-testid='hero-video'>         
           <source src='/Untitled.mov' type="video/mp4"/>       
         </video>
         <h1 className={styles.heroTitle}>SHISO BURGER:<br/>THE BEST OF TWO WORLDS</h1>
       </section>
 
-      <section className={styles.locationContainer}>
+      <section className={styles.locationContainer} data-testid='section'>
         <p><b>Do you like burgers and have a taste for Asian cuisine?</b> With us, you get both in one. Shiso Burger stands for freshly made burgers with fine ingredients – in our Berlin-Mitte home base and in many cities worldwide.</p>
         <div>
           <Image src={require("../assets/images/fresh-burger-and-worker.avif")} className={styles.burgerImage} alt='resh-burger-and-worker'/>
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.newProductContainer}>
+      <section className={styles.newProductContainer} data-testid='section'>
         <Image src={require('../assets/images/burger-foregound.avif')} alt=''/>
         <ThreePaneContainer
           title={newProductData.title}
@@ -49,7 +49,7 @@ export default function Home() {
         />
       )}
 
-      <section className={styles.exploreContainer}>
+      <section className={styles.exploreContainer} data-testid='section'>
         <Image src={require("../assets/images/man-at-pass.avif")} className={styles.burgerImage} alt='resh-burger-and-worker'/>
         <ThreePaneContainer
           title={exploreData.title}
@@ -61,7 +61,7 @@ export default function Home() {
         <Image src={require("../assets/images/vacant-dinning.avif")} className={styles.burgerImage} alt='resh-burger-and-worker'/>
       </section>
 
-      <section className={styles.franchiseContainer}>
+      <section className={styles.franchiseContainer} data-testid='section'>
         <Image src={require("../assets/images/fox.avif")} className={styles.burgerImage} alt='resh-burger-and-worker'/>
         <ThreePaneContainer
           title={franchiseData.title}

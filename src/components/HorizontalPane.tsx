@@ -6,7 +6,7 @@ import ThreePaneContainer from './ThreePaneContainer'
 
 export default function HorizontalPane(data: HPHorizontalPaneData) {
   return (
-    <section className={styles.horizontalPane}>
+    <section className={styles.horizontalPane} data-testid='section' role='three-pane'>
       <Image src={data.image} alt={data.content.description} className={styles.reversedImage}/>
       <ThreePaneContainer 
         title={data.content.title}
