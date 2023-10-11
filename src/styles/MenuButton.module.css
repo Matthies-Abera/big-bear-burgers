@@ -1,0 +1,65 @@
+.menuButton {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+}
+
+.menuButton div::after {
+    background-color: var(--neutral);
+    content: '';
+    height: 0.25rem;
+    left: 0;
+    position: relative;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+    width: 100%;
+}
+
+.menuButton div:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.menuButton:hover .menuImage {
+    top: 0.75rem;
+    transition: top 0.3s;
+}
+
+.menuImage {
+    height: 3.25rem;
+    position: relative;
+    top: 1.25rem;
+    transition: top 0.3s;
+    width: auto;
+}
+
+.menuText {
+    background-color: var(--accent);
+    color: var(--neutral);
+    display: grid;
+    font-weight: bold;
+    justify-content: center;
+    padding: 1.25rem 0 1rem 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .menuButton:hover .menuImage {
+        top: 1.25rem;
+    }
+    
+    .menuImage {
+        height: 7rem;
+        position: relative;
+        justify-self: flex-end;
+        top: 2rem;
+    }
+
+    .menuText {
+        font-weight: bold;
+        justify-content: flex-start;
+        padding-left: 1rem;
+        font-size: 2rem;
+    }
+}
