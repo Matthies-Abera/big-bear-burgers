@@ -1,0 +1,106 @@
+/* TODO: TRANSITION ANIMATION ON INGREDIENTS*/
+
+.allergenTitle {
+    padding-top: 1rem;
+}
+
+.allergens {
+    margin-top: -0.5rem;
+    max-width: calc(100dvw - 4rem);
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+.allergens p {
+    display: inline;
+}
+
+.description {
+    max-width: calc(100dvw - 4rem);
+    padding: 2rem 0 0 2rem;
+}
+
+.drownDownButton {
+    background-color: var(--hero);
+    padding-left: 4rem;
+}
+
+.drownDownButton h3 {
+    margin: 0 !important;
+    padding-bottom: 2rem;
+    text-decoration-thickness: 0.15rem;
+    text-decoration: underline;
+}
+
+.drownDownButton img {
+    position: relative;
+    right: 2rem;
+    top: -3.5rem;
+    width: 1.5rem;
+}
+
+.downDownClosed {
+    height: 0;
+}
+
+.downDownInformation {
+    background-color: var(--hero);
+    overflow: hidden;
+    padding-left: 4rem;
+}
+
+.downDownInformation p {
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+}
+
+.drownDownButton::before {
+    background: var(--hero);
+    content: '';
+    display: flex;
+    height: 38dvw;
+    left: -4rem;
+    margin-top: -38dvw;
+    position: relative;
+    width: calc(100dvw + 4rem);
+    z-index: -1;
+}
+
+.itemImage {
+    align-self: flex-end;
+    height: auto;
+    position: relative;
+    right: -45%;
+    width: 100dvw;
+}
+
+.menuItem {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    width: calc(100dvw);
+}
+
+.menuItem h2 {
+    padding-left: 2rem;
+}
+
+.menuItem:nth-child(even) .itemImage {
+    right: 45%;
+}
+
+.subtype {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 0 0 2rem;
+}
+
+.subtypeText {
+    border-radius: 0.25em;
+    border: 0.15em solid grey;
+    color: var(--subtext);
+    font-weight: bold;
+    opacity: 0.5;
+    padding: 0.25em 0.6em 0.25em 0.4em;
+}
