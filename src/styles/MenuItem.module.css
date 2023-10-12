@@ -1,5 +1,6 @@
-/* TODO: TRANSITION ANIMATION ON INGREDIENTS */
+/* TODO: FIX TRANSITION ANIMATION ON INGREDIENTS */
 /* TODO: CREATE DROPDOWN BUTTON ON ALLERGENS IN DESKTOP VIEWPORT */
+/* TODO: TIDDY SPACING BELOW INGREDIENTS IN DESKTOP VIEWPORT */
 
 .allergenTitle {
     padding-top: 1rem;
@@ -109,6 +110,7 @@
 
 @media (min-width: 768px) {
     .drownDownButton {
+        max-width: calc(36.875rem);
         padding-top: 2rem;
         width: calc(50dvw - 4rem);
     }
@@ -125,6 +127,7 @@
         background-color: initial;
         height: 2rem;
         margin-top: -2rem;
+        max-width: 36.875rem;
         width: 50dvw;
     }
 
@@ -139,11 +142,14 @@
     .itemImage {
         align-self: flex-start;
         grid-area: image;
-        left: -25dvw;
+        max-width: 40rem;
+        right: clamp(10rem, 25dvw, 25rem);
         width: 50dvw;
     }
 
     .itemInformation, .itemSummary {
+        justify-self: center;
+        max-width: 36.875rem;
         width: 50dvw;
     }
 
@@ -162,6 +168,13 @@
     .menuItem {
         display: grid;
         grid-template-areas: 'left right';
+        justify-self: center;
+        max-width: 73.75rem;
+        overflow: hidden;
+    }
+
+    .menuItem:nth-child(odd) .allergens {
+        width: 50%;
     }
 
     .menuItem:nth-child(even) .itemInformation {
@@ -182,6 +195,6 @@
     }
 
     .menuItem:nth-child(even) .itemImage {
-        left: -80dvw;
+        right: clamp(37.5rem, 80dvw, 62.5rem);
     }
 }
