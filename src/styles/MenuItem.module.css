@@ -1,4 +1,5 @@
-/* TODO: TRANSITION ANIMATION ON INGREDIENTS*/
+/* TODO: TRANSITION ANIMATION ON INGREDIENTS */
+/* TODO: CREATE DROPDOWN BUTTON ON ALLERGENS IN DESKTOP VIEWPORT */
 
 .allergenTitle {
     padding-top: 1rem;
@@ -73,6 +74,7 @@
     position: relative;
     right: -45%;
     width: 100dvw;
+    z-index: 1;
 }
 
 .menuItem {
@@ -103,4 +105,83 @@
     font-weight: bold;
     opacity: 0.5;
     padding: 0.25em 0.6em 0.25em 0.4em;
+}
+
+@media (min-width: 768px) {
+    .drownDownButton {
+        padding-top: 2rem;
+        width: calc(50dvw - 4rem);
+    }
+
+    .drownDownButton h3 {
+        padding-bottom: 0;
+    }
+
+    .drownDownButton img {
+        top: -1.5rem;
+    }
+    
+    .drownDownButton::before {
+        background-color: initial;
+        height: 2rem;
+        margin-top: -2rem;
+        width: 50dvw;
+    }
+
+    .drownDownButton, .downDownInformation {
+        background-color: rgba(244, 231, 205, 0.5);
+    }
+
+    .downDownClosed {
+        height: 100%;
+    }
+
+    .itemImage {
+        align-self: flex-start;
+        grid-area: image;
+        left: -25dvw;
+        width: 50dvw;
+    }
+
+    .itemInformation, .itemSummary {
+        width: 50dvw;
+    }
+
+    .itemSummary h2 {
+        font-size: 3.5rem;
+    }
+
+    .itemInformation {
+        display: grid;
+        grid-template-areas: 
+        'text image'
+        'text image'
+        ;
+    }
+
+    .menuItem {
+        display: grid;
+        grid-template-areas: 'left right';
+    }
+
+    .menuItem:nth-child(even) .itemInformation {
+        background-color: rgba(244, 231, 205, 0.5);
+        width: 50dvw;
+    }
+
+    .menuItem:nth-child(even) .itemSummary {
+        grid-area: right;
+    }
+
+    .menuItem:nth-child(even) .drownDownButton,
+    .menuItem:nth-child(even) .downDownInformation {
+        background-color: rgba(244, 231, 205, 0);
+        left: 40%;
+        position: relative;
+        width: 30%;
+    }
+
+    .menuItem:nth-child(even) .itemImage {
+        left: -80dvw;
+    }
 }
